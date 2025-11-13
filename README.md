@@ -219,6 +219,63 @@ ORDER BY
 
 ![Diagrama do sistema](document/images/select-2.png "Select dos Dados")
 
+## 5. Dashboard de Monitoramento Agrícola (Python + Plotly)
+
+Este módulo complementa a análise SQL do projeto, fornecendo uma visualização interativa dos dados agrícolas gerados e importados.
+O dashboard foi desenvolvido em **Python**, utilizando as bibliotecas **Pandas** para processamento de dados e **Plotly** para visualização gráfica, permitindo interpretar as informações capturadas pelos sensores.
+
+### 5.1. Objetivo
+
+O objetivo do dashboard é facilitar a **análise visual dos dados de sensores** presentes no arquivo `document/farmtech_sensor_data_multi_cultura.csv`, apresentando métricas de umidade, temperatura, pH e atuação da bomba de irrigação para múltiplas culturas.
+A ferramenta também incorpora uma **lógica automática de recomendação de irrigação**, com base nas condições simuladas de solo e clima.
+
+### 5.2. Estrutura Funcional
+
+| Módulo / Função | Descrição |
+| :--- | :--- |
+| **Leitura de Dados (`pd.read_csv`)** | Carrega e prepara o arquivo CSV, convertendo campos de data/hora e tratando delimitadores. |
+| **Lógica de Recomendação (`gerar_sugestao_irrigacao`)** | Define automaticamente o status de irrigação com base em condições climáticas e umidade do solo. |
+| **Visualizações com Plotly** | Gera gráficos interativos (linha, barra e pizza) para análise por cultura. |
+| **Função `exibir_dashboard()`** | Exibe os gráficos principais e uma tabela resumo com as últimas leituras dos sensores. |
+
+### 5.3. Visualizações Geradas
+
+O dashboard apresenta os seguintes gráficos interativos:
+
+1. **Séries Temporais:**  
+   - Umidade do solo (%)
+
+![Diagrama do sistema](document/images/umidade.png "Umidade do solo")
+
+   - Temperatura do ar (°C)
+
+![Diagrama do sistema](document/images/temp-ar.png "Temperatura do Ar")
+
+   - pH do solo
+
+![Diagrama do sistema](document/images/ph-solo.png "Ph do solo")
+
+   *(cada métrica é visualizada ao longo do tempo para a cultura selecionada)*
+
+2. **Status de Nutrientes (N, P, K):**  
+   - Distribuição da presença de macronutrientes com base nos registros de sensores.
+
+![Diagrama do sistema](document/images/npk.png "Nutrientes no solo")
+
+3. **Indicadores de Irrigação:**  
+   - **Atuação da bomba (BOMBA_LIGADA):** gráfico de pizza mostrando a frequência de acionamento.
+
+![Diagrama do sistema](document/images/atuacao-bomba.png "Acionamento de Irrigação")
+
+   - **Sugestão de irrigação:** análise das condições de solo e clima simuladas pela função de recomendação.
+
+![Diagrama do sistema](document/images/sugestao-irrigacao.png "Sugestão de Irrigação")
+
+### 5.4. Execução do Dashboard
+
+O dashboard deve ser executado em ambiente **Jupyter Notebook** ou similar.
+O código principal encontra-se em `src/farmtech_dashboard.ipynb`.
+
 ## 🔗 Links Importantes
 
 - **Vídeo Demonstrativo:** [Youtube](https://youtu.be/M5LsInG6dLQ)

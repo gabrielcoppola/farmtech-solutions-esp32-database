@@ -221,8 +221,7 @@ ORDER BY
 
 ## 🔗 Links Importantes
 
-- **Vídeo Demonstrativo:** [Youtube](https://youtu.be/XHSX82LDZh0)
-- **Repositório GitHub:** [Código completo](https://github.com/gabrielcoppola/farmtech-solutions-esp32)
+- **Vídeo Demonstrativo:** [Youtube](https://youtu.be/M5LsInG6dLQ)
 
 ## 📋 Licença
 
